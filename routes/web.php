@@ -32,7 +32,7 @@ Route::get('/login', 'LoginController@login')->name('site.login');
 
 Route::prefix('/app')->group(function () {
     Route::get('/cliente', 'ClienteController@cliente')->name('site.cliente');
-    Route::get('/fornecedores', 'FornecedoresController@fornecedores')->name('site.fornecedores');
+    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedor');
     Route::get('/produtos', 'ProdutosController@produtos')->name('site.produtos');
 });
 
