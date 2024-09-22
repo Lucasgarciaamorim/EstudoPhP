@@ -42,4 +42,3 @@ Route::fallback(function () {
     echo 'A Rota acessada não existe. acesse o <a href="' . route('site.index') . '">Clique aqui</a> para ir para a pagina principal';
 });
 
-Route::get  
