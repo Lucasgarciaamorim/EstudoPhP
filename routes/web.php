@@ -41,3 +41,5 @@ Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
 Route::fallback(function () {
     echo 'A Rota acessada não existe. acesse o <a href="' . route('site.index') . '">Clique aqui</a> para ir para a pagina principal';
 });
+
+Route::get  
