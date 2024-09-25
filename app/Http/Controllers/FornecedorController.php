@@ -13,18 +13,26 @@ class FornecedorController extends Controller
             0 => [
                 'name' => 'fornecedor 1',
                 'status' => 'N',
-                'cnpj' => '00.0000/0000-00'
+                'cnpj' => ''
             ],
-            
-                1 => [
-                    'name' => 'fornecedor 2',
-                    'status' => 'S'
-
-                ]
-            
+            1 => [
+                'name' => 'fornecedor 2',
+                'status' => 'S'
+            ]
         ];
-
-
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
+
+
+
+/*
+if(empty($variavel)){} retorna true se a variável estiver vazia
+tipos de dados vazios
+- '' ( uma string vazia)
+- 0
+- 0.0
+- null
+- false 
+- array() ( um array vazio)
+- $var (não atribuido um valor a variável)
