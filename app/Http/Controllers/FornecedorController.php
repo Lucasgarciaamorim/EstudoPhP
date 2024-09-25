@@ -17,22 +17,21 @@ class FornecedorController extends Controller
             ],
             1 => [
                 'name' => 'fornecedor 2',
-                'status' => 'S'
+                'status' => 'S',
+                'cnpj' => '000.0000.0000/00-0'
             ]
         ];
+
+        /* operador Ternário
+
+        condição ? se verdade : se falso;
+        
+Exemplo:
+        $msg =  isset($fornecedores[1]['cnpj']) ? 'CNPJ informado' : ' CNPJ não informado';
+        echo $msg;
+
+        */
+
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
-
-
-
-/*
-if(empty($variavel)){} retorna true se a variável estiver vazia
-tipos de dados vazios
-- '' ( uma string vazia)
-- 0
-- 0.0
-- null
-- false 
-- array() ( um array vazio)
-- $var (não atribuido um valor a variável)
