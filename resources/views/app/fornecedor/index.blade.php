@@ -7,7 +7,26 @@
 @isset($fornecedores)
     Fornecedor: {{ $fornecedores[0]['name'] }}
     <br>
-    Status {{ $fornecedores[0]['status'] }}    <br>
+    Status {{ $fornecedores[0]['status'] }} <br>
 
     CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'Dado não foi Preenchido' }}
+    <br>
+    Telefone: ({{ $fornecedores[0]['ddd'] ?? '' }}) {{ $fornecedores[0]['telefone'] ?? '' }}
+
+    @switch($fornecedores[0]['ddd'])
+        @case('11')
+            São Paulo - SP
+        @break
+
+        @case('32')
+            Juiz de Fora - MG
+        @break
+
+        @case('85')
+            Fortaleza - Ceará
+        @break
+
+        @default
+            Estado não identificado
+    @endswitch
 @endisset
