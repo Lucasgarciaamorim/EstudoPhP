@@ -7,14 +7,7 @@
 @isset($fornecedores)
     Fornecedor: {{ $fornecedores[0]['name'] }}
     <br>
-    Status {{ $fornecedores[0]['status'] }}
-    <br>
-    @isset($fornecedores[0]['cnpj'])
-        CNPJ: {{ $fornecedores[0]['cnpj'] }}
-        @empty($fornecedores[0]['cnpj'])
-            - Vazio
-        @endempty
-    @endisset
+    Status {{ $fornecedores[0]['status'] }}    <br>
+
+    CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'Dado não foi Preenchido' }}
 @endisset
-
-
