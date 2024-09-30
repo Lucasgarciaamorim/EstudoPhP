@@ -8,24 +8,31 @@
 
 
     @forelse ($fornecedores as $indice => $fornecedor)
-        Fornecedor: @{{ $fornecedor['name'] }}
+        Iteração atual: {{ $loop->iteration }}
         <br>
-        Status @{{ $fornecedor['status'] }} <br>
+        <br>
+        Fornecedor: {{ $fornecedor['name'] }}
+        <br>
+        Status {{ $fornecedor['status'] }} <br>
 
-        CNPJ: @{{ $fornecedor['cnpj'] ?? 'Dado não foi Preenchido' }}
+        CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não foi Preenchido' }}
         <br>
-        Telefone: @({{ $fornecedor['ddd'] ?? '' }}) @{{ $fornecedor['telefone'] ?? '' }}
+        Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
         <hr>
+
+        @if ($loop->first)
+            Primeira Iteração
+        @endif
+
+        @if ($loop->last)
+            Ultima Iteração
+        @endif
+        <br>
+
+        Quantidade de Registros:{{ $loop->count }}
+
 
     @empty
         Não existem fornecedores cadastrados
     @endforelse
 @endisset
-
-
-se eu quiser que seja mostrado exatamente como ta escrito e não que o interpretador interprete o código, eu coloco um @
-na frente do código
-
-exemplo:
-
-@{ $fornecedor['ddd'] ?? '' }
