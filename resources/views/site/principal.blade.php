@@ -3,10 +3,6 @@
 @section('titulo', $titulo)
 
 @section('conteudo')
-
-   
-
-
     <div class="conteudo-destaque">
 
         <div class="esquerda">
